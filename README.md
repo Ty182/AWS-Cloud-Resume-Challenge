@@ -1,6 +1,6 @@
 # CloudResumeChallenge
 
-"The Cloud Resume Challenge" is a project created by Forrest Brazeal, Head of content at Google Cloud. 
+[The Cloud Resume Challenge] (https://cloudresumechallenge.dev/docs/the-challenge/aws/) is a project created by Forrest Brazeal, Head of content at Google Cloud. 
 
 The final deliverable of this project is a serverless website hosting your resume.
 
