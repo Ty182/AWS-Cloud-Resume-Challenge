@@ -13,6 +13,11 @@
 
 ---
 
+### Architecture Diagram
+![Architecture Diagram](/images/aws_diagram.png)
+
+---
+
 ### Project Details
 
 #### To Do
