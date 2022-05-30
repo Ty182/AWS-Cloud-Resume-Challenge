@@ -1,39 +1,37 @@
 /* Typography */
-
 html {
     font-family: 'Roboto', sans-serif;
 }
 
-@media (min-width: 576px) {
-    html {
-        font-size: 14px;
-    }
+/* Padding around page */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
 }
 
-@media (min-width: 768px) {
-    html {
-        font-size: 16px;
-    }
-}
-
-@media (min-width: 992px) {
-    html {
-        font-size: 18px;
-    }
-}
-
+/* Controls font size of all text */
 @media (min-width: 1200px) {
     html {
         font-size: 20px;
     }
 }
 
+/* Social media icon size */
 .icons-social i {
     font-size: 3em;
 }
 
 /* Custom Styles */
-
 main {
     display: flex;
     flex-direction: column;
@@ -43,30 +41,49 @@ main {
     text-align: center;
 }
 
+/* "Hello, I'm Tyler" */
 main>.intro {
     font-family: 'Reem Kufi', sans-serif;
     font-size: 3.75em;
     font-weight: 600;
 }
 
+/* "AWS Cloud Resume Challenge" */
 main>.tagline {
     font-size: 1.5rem;
     margin: 1.5rem 0;
     font-weight: 100;
 }
 
+/* "You're currently..."*/
+main>.about-me {
+    font-size: 1.1rem;
+    margin: 1.5rem 0;
+    font-weight: 100;
+}
+
+/* Padding for social media icon */
 .icons-social i {
     padding: 10px;
 }
 
-.devto {
-    margin-bottom: -0.20rem;
+/* "You are visitor number:" */
+main>.visitor-count {
+    /* font-size: 1.2rem; */
+    margin: 1.5rem 0;
+    font-weight: 100;
 }
 
-.devto svg {
-    margin-bottom: -0.20rem;
-    margin-left: 0.675rem;
-    ;
-    width: 2.65rem;
-    height: 2.65rem;
+/* Resume */
+main>.resume-title {
+    font-size: 1.5rem;
+    /* margin: 1.5rem 0; */
+    font-weight: 100;
+}
+
+/* Roles */
+main>.roles {
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+    font-weight: 100;
 }
