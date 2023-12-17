@@ -3,8 +3,7 @@
 [The Cloud Resume Challenge](https://cloudresumechallenge.dev/docs/the-challenge/aws/) is a project created by Forrest Brazeal, Head of content at Google Cloud. 
 - The final deliverable is a serverless website hosting my resume
 - Technologies powering this:
-     - AWS - S3 buckets | DynamoDB | CloudFront | Route53 | Certificate Manager | API Gateway | Lambda | SAM (Infrastructure as Code)
-     - GitHub Actions is used for CI/CD
+     - AWS - S3 buckets | DynamoDB | CloudFront | Route53 | Certificate Manager | API Gateway | Lambda | Terraform | GitLab Continuous Integration (CI) | TFSec
 
 ---
 
@@ -13,16 +12,18 @@
 
 ---
 
-### Architecture Diagram
-![Architecture Diagram](/images/aws_diagram.png)
-
+### Architecture
+![Architecture Diagram](/images/flow.png)
+![steps](/images/steps)
+![ci](/images/pipeline.png)
 ---
 
 ### Project Details
 
 #### To Do
-- [ ] Build and test SAM templates for IaC
-- [ ] Setup GitHub Actions
+- [x] Add tfsec IAC security scanning
+- [x] Build using Terraform
+- [x] Setup GitLab CI 
 - [x] Build a website in HTML/CSS
 - [x] Host website with S3 Bucket
 - [x] Use Route53 for custom DNS
