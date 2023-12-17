@@ -14,7 +14,7 @@
 
 ### Architecture
 ![Architecture Diagram](/images/flow.png)
-![steps](/images/steps)
+![steps](/images/steps.png)
 ![ci](/images/pipeline.png)
 ---
 
