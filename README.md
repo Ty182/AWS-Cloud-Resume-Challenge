@@ -17,7 +17,7 @@ This project is my submission for the AWS Cloud Resume Challenge, a hands-on lea
   - AWS Lambda
   - DynamoDB
   - CloudWatch
-<br /> 
+
 - **Tools & Frameworks:**
   - git
   - HTML, CSS, JavaScript
