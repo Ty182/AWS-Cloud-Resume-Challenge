@@ -1,35 +1,54 @@
 # AWS Cloud Resume Challenge
 
-[The Cloud Resume Challenge](https://cloudresumechallenge.dev/docs/the-challenge/aws/) is a project created by Forrest Brazeal, Head of content at Google Cloud. 
-- The final deliverable is a serverless website hosting my resume
-- Technologies powering this:
-     - AWS - S3 buckets | DynamoDB | CloudFront | Route53 | Certificate Manager | API Gateway | Lambda | Terraform | GitLab Continuous Integration (CI) | TFSec
+<div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/yAWnvQJoTX2r1SIXoS" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/yAWnvQJoTX2r1SIXoS">via GIPHY</a></p>
 
----
+## Overview
 
-### Demo
-[View the live site here!](https://www.tylerpettycloudresumechallenge.com)
+This project is my submission for the AWS Cloud Resume Challenge, a hands-on learning experience to showcase proficiency in Amazon Web Services (AWS) by building a resume-styled website hosted entirely on AWS serverless infrastructure.
 
----
+## Technologies Used
 
-### Architecture
-![Architecture Diagram](/images/flow.png)
-![steps](/images/steps.png)
-![ci](/images/pipeline.png)
----
+- **AWS Services:**
+  - Route53
+  - CloudFront
+  - Certificate Manager
+  - Amazon S3
+  - API Gateway
+  - AWS Lambda
+  - DynamoDB
+  - CloudWatch
+<br /> 
+- **Tools & Frameworks:**
+  - git
+  - HTML, CSS, JavaScript
+  - HashiCorp Terraform
+  - GitLab CI
+  - Aquasec tfsec 
 
-### Project Details
+## Project Structure
 
-#### To Do
-- [x] Add tfsec IAC security scanning
-- [x] Build using Terraform
-- [x] Setup GitLab CI 
-- [x] Build a website in HTML/CSS
-- [x] Host website with S3 Bucket
-- [x] Use Route53 for custom DNS
-- [x] Use Certificate Manager for enabling secure access with SSL Certificate
-- [x] Use CloudFront for routing HTTP/S traffic
-- [x] Use DynamoDB for database, storing website visitor count
-- [x] Use API Gateway to trigger Lambda function
-- [x] Use Lambda function (python) to read/write website visitor count to DynamoDB
-- [x] Use javascript on website to call API and display visitor counter
+- **`/assets`**: Contains the source code for the resume website.
+- **`/terraforms`**: Holds the Terraform modules created and used to define the AWS infrastructure.
+- **`.gitlab-ci.yml`**: The GitLab CI configuration for deployment
+- **`/images`**: Screenshot for this README depicting the architecture
+
+## Architecture 
+
+![Architecture Diagram](images/crc_architecture.png)
+
+### Overview
+
+#### How it works
+AWS S3 is perfect for hosting static websites i.e. webpages that display fixed content and do not update based on user interactions. 
+
+When a user navigates to the website, Route53 DNS kicks in and redirects the request to CloudFront. CloudFront serves as a content delivery network (CDN) enabling caching to speed up requests. It also enables HTTP/S (session encryption) by accepting a Certificate from Certificate Manager. 
+
+As users navigate to the website, a bit of JavaScript (JS) code executes. This JS code updates the webpage to showcase how many users have viewed the website. It does this by contacting an Amazon API Gateway that triggers a Lambda function. This Lambda function is a bit of Python code that updates an Amazon DynamoDB table and retrieves the new value. 
+
+#### How it's deployed
+A GitLab CI pipeline (.gitlab-ci.yml file) deploys the code. This ensures consistent and automated deployments. The website that you see is just HTML/CSS/JS code. The backend AWS infrastructure gets deployed via Terraform, an Infrastructure as Code (IaC) language. 
+
+Defining IaC using Terraform is the way to go. It provides several benefits like code consistency, repeatability, predictability, scalability, resource state management, automation, and more! Since the infrastructure gets defined as code, we can easily incorporate code scanning. I used TFSec, which
+scans the Terraform code and identifies misconfigurations to address. The scans happen automatically each time the code gets pushed to GitLab. 
+
+Once the code successfully passes each GitLab pipeline job, it's ready to deploy into AWS. After I push "deploy", GitLab authenticates to my AWS account and deploys the code.
